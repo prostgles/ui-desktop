@@ -67,7 +67,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\s\Desktop\prostgles-ui-desktop-win32-x64\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "${rootLocationWin}\\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 ${rootFiles.filter(f => !f.name.endsWith(".exe") && f.name !== "Data")
     .map(f => {
         return `Source: "${rootLocationWin}\\${f.name}"; DestDir: "{app}"; Flags: ignoreversion`
