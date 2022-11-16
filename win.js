@@ -1,3 +1,3 @@
-const { make } = require("./win-inno-setup");
+const { make } = require("./dist/win-inno-setup");
 
 make();
