@@ -3,10 +3,14 @@ const unhandled = require('electron-unhandled');
 unhandled();
 import { app, BrowserWindow, safeStorage, Tray } from 'electron';
 import { make } from "./win-inno-setup";
+
+/** Ensure it's built */
+make;
+
 import { randomUUID } from 'crypto';
 const electronSid = randomUUID();
 
-const expressApp = require("./ui/server/dist/server/src/electronConfig");
+const expressApp = require("../ui/server/dist/server/src/electronConfig");
 
 const iconPath = __dirname + '/icon512.png';
 
@@ -28,7 +32,6 @@ if (!gotTheLock) {
   initApp()
 }
 
-
 function initApp(){
   // This method will be called when Electron has finished
   // initialization and is ready to create browser windows.
@@ -38,6 +41,7 @@ function initApp(){
     expressApp.start(
       safeStorage, 
       { 
+        rootDir:  app.getPath('userData'),
         port: 0, 
         electronSid, 
         onSidWasSet: () => { 

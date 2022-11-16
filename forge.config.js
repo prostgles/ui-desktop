@@ -10,17 +10,7 @@ module.exports = {
     {
       "name": "@electron-forge/maker-dmg",
       "config": {
-        icon: 'icon512.png',
-        "icon": "icon512.png"
-      }
-    },
-    {
-      "name": "@electron-forge/maker-squirrel",
-      "config": {
-        icon: "icon512.png",
-        "authors": "ProstglesUI",
-        "iconUrl": "https://prostgles.com/favicon.ico",
-        "name": "ProstglesUI"
+        "icon": "image.ico"
       }
     },
     {
@@ -28,8 +18,7 @@ module.exports = {
       "config": {
         "options": {
           icon: "icon512.png",
-          "maintainer": "prostgles",
-          "homepage": "https://prostgles.com/favicon.ico"
+          "homepage": "https://prostgles.com/"
         }
       }
     }

@@ -14,7 +14,7 @@
 		"declarationMap": true,
 		"keyofStringsOnly": true,
 		"strict": true,
-		// "outDir": "dist",
+		"outDir": "dist",
 		"resolveJsonModule": true,
 		"skipLibCheck": true //excludes node_modules
 	},

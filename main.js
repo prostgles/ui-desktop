@@ -30,7 +30,9 @@ function initApp() {
     // initialization and is ready to create browser windows.
     // Some APIs can only be used after this event occurs.
     electron_1.app.whenReady().then(async () => {
+        console.error("FIX app.getPath('userData')", electron_1.app.getPath('userData'));
         expressApp.start(electron_1.safeStorage, {
+            rootDir: electron_1.app.getPath('userData'),
             port: 0,
             electronSid,
             onSidWasSet: () => {
