@@ -15,6 +15,7 @@
 		"keyofStringsOnly": true,
 		"strict": true,
 		// "outDir": "dist",
+		"resolveJsonModule": true,
 		"skipLibCheck": true //excludes node_modules
 	},
 	"exclude": [
