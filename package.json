@@ -12,7 +12,7 @@
     "make": "npx tsc && rm -rf ./out && electron-forge make",
     "build": "DEBUG=* electron-builder -l",
     "dist": "electron-builder",
-    "pack": "electron-packager . --out ./packed --overwrite true",
+    "pack": "electron-packager . --out ./packed --overwrite true --icon ./image.ico",
     "makew": "npm run pack && node win.js",
     "publish": "electron-forge publish"
   },
