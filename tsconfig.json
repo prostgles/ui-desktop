@@ -14,6 +14,7 @@
 		"declarationMap": true,
 		"keyofStringsOnly": true,
 		"strict": true,
+		// "outDir": "dist",
 		"skipLibCheck": true //excludes node_modules
 	},
 	"exclude": [
