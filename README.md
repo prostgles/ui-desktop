@@ -16,7 +16,11 @@ git clone git@github.com:prostgles/ui.git
 
 cd ui/server/
 
-npm run build
+    ##Linux
+    npm run build
+    
+    ##Windows
+    npm run buildw
 
 cd ../..
 

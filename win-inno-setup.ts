@@ -35,7 +35,7 @@ return `
 #define MyAppPublisher ${JSON.stringify(pkg.author)}
 #define MyAppURL ${JSON.stringify(pkg.homepage)}
 #define MyAppExeName ${JSON.stringify(pkg.name + ".exe")}
-#define MyAppSetupName ${JSON.stringify([pkg.name, pkg.version, "setup"].join("_"))}
+#define MyAppSetupName ${JSON.stringify([pkg.name, pkg.version, "amd64", "setup"].join("_"))}
 
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".sql"
