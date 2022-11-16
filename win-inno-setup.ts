@@ -3,7 +3,7 @@ import pkg from "./package.json";
 
 export const make = () => {
 
-    const packed = `${__dirname}\\packed`;
+    const packed = `${__dirname}\\..\\packed`;
     const folders = fs.readdirSync(packed);
     const packedFolder = folders.find(d => d.includes("prostgles-desktop"));
     if(packedFolder){
