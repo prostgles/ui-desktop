@@ -13,7 +13,7 @@
     "build": "DEBUG=* electron-builder -l",
     "dist": "electron-builder",
     "pack": "electron-packager . --out ./packed --overwrite true --icon ./image.ico",
-    "makew": "npm run pack && node win.js",
+    "makew": "npx tsc && npm run pack && node win.js",
     "publish": "electron-forge publish"
   },
   "author": "Prostgles  <prostgles@protonmail.com>",
