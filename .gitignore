@@ -107,3 +107,5 @@ ui
 out
 dist
 packed
+.electron-auth.json
+inno.iss
