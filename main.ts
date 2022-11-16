@@ -2,6 +2,7 @@
 const unhandled = require('electron-unhandled');
 unhandled();
 import { app, BrowserWindow, safeStorage, Tray } from 'electron';
+import { make } from "./win-inno-setup";
 import { randomUUID } from 'crypto';
 const electronSid = randomUUID();
 

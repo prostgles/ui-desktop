@@ -1,24 +1,28 @@
 import * as fs from "fs";
 import pkg from "./package.json";
 
-const folders = fs.readdirSync(__dirname + `./`);
-const packedFolder = folders.find(d => d.includes("prostgles-desktop"));
-if(packedFolder){
-    const buildDir = `${__dirname}/${packedFolder}`;
+export const make = () => {
 
-    /** Move all packed root folders to Data */
-    const dataDir = `${buildDir}/Data`
-    fs.mkdirSync(dataDir);
-
-    const otherFolders = fs.readdirSync(buildDir, { withFileTypes: true });
-    otherFolders.forEach(f => {
-        if(f.isDirectory() && f.name !== "Data"){
-            fs.renameSync(`${buildDir}/${f.name}/`, `${dataDir}/${f.name}/`)
-        }
-    });
-
-    const buildDirFiles = fs.readdirSync(buildDir, { withFileTypes: true });
-    fs.writeFileSync("inno.iss", getInnoConfig(buildDirFiles, `${__dirname}\\${packedFolder}`), { encoding: "utf8" });
+    const folders = fs.readdirSync(__dirname + `./`);
+    const packedFolder = folders.find(d => d.includes("prostgles-desktop"));
+    if(packedFolder){
+        const buildDir = `${__dirname}/${packedFolder}`;
+    
+        /** Move all packed root folders to Data */
+        const dataDir = `${buildDir}/Data`
+        fs.mkdirSync(dataDir);
+    
+        const otherFolders = fs.readdirSync(buildDir, { withFileTypes: true });
+        otherFolders.forEach(f => {
+            if(f.isDirectory() && f.name !== "Data"){
+                fs.renameSync(`${buildDir}/${f.name}/`, `${dataDir}/${f.name}/`)
+            }
+        });
+    
+        const buildDirFiles = fs.readdirSync(buildDir, { withFileTypes: true });
+        fs.writeFileSync("inno.iss", getInnoConfig(buildDirFiles, `${__dirname}\\${packedFolder}`), { encoding: "utf8" });
+        
+    }
     
 }
 
@@ -85,7 +89,6 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\\{#MyAppExeName}"; Tasks: d
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
 
 `
 }
