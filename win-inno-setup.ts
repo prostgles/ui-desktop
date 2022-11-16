@@ -20,7 +20,7 @@ export const make = () => {
         });
     
         const buildDirFiles = fs.readdirSync(buildDir, { withFileTypes: true });
-        fs.writeFileSync("inno.iss", getInnoConfig(buildDirFiles, `${__dirname}\\${packedFolder}`), { encoding: "utf8" });
+        fs.writeFileSync(`${__dirname}\\inno.iss`, getInnoConfig(buildDirFiles, `${__dirname}\\${packedFolder}`), { encoding: "utf8" });
         
     }
     
