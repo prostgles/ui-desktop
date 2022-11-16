@@ -3,7 +3,7 @@ import pkg from "./package.json";
 
 export const make = () => {
 
-    const folders = fs.readdirSync(__dirname + `./`);
+    const folders = fs.readdirSync(__dirname);
     const packedFolder = folders.find(d => d.includes("prostgles-desktop"));
     if(packedFolder){
         const buildDir = `${__dirname}/${packedFolder}`;
