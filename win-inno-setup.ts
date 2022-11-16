@@ -3,10 +3,11 @@ import pkg from "./package.json";
 
 export const make = () => {
 
-    const folders = fs.readdirSync(__dirname);
+    const packed = `${__dirname}\\packed`;
+    const folders = fs.readdirSync(packed);
     const packedFolder = folders.find(d => d.includes("prostgles-desktop"));
     if(packedFolder){
-        const buildDir = `${__dirname}/${packedFolder}`;
+        const buildDir = `${packed}/${packedFolder}`;
     
         /** Move all packed root folders to Data */
         const dataDir = `${buildDir}/Data`
@@ -20,7 +21,7 @@ export const make = () => {
         });
     
         const buildDirFiles = fs.readdirSync(buildDir, { withFileTypes: true });
-        fs.writeFileSync(`${__dirname}\\inno.iss`, getInnoConfig(buildDirFiles, `${__dirname}\\${packedFolder}`), { encoding: "utf8" });
+        fs.writeFileSync(`${packed}\\inno.iss`, getInnoConfig(buildDirFiles, `${__dirname}\\${packedFolder}`), { encoding: "utf8" });
         
     }
     
