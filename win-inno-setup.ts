@@ -21,7 +21,7 @@ export const make = () => {
         });
     
         const buildDirFiles = fs.readdirSync(buildDir, { withFileTypes: true });
-        fs.writeFileSync(`${buildDir}\\inno.iss`, getInnoConfig(buildDirFiles, buildDir), { encoding: "utf8" });
+        fs.writeFileSync(`${packed}\\inno.iss`, getInnoConfig(buildDirFiles, buildDir), { encoding: "utf8" });
         
     }
     
