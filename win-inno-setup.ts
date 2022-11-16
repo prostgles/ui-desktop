@@ -35,6 +35,7 @@ return `
 #define MyAppPublisher ${JSON.stringify(pkg.author)}
 #define MyAppURL ${JSON.stringify(pkg.homepage)}
 #define MyAppExeName ${JSON.stringify(pkg.name + ".exe")}
+#define MyAppSetupName ${JSON.stringify([pkg.name, pkg.version, "setup"].join("_"))}
 
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".sql"
@@ -56,6 +57,8 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
+
+OutputBaseFilename={#MyAppSetupName}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern

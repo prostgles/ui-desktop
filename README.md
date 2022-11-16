@@ -23,12 +23,13 @@ cd ../..
     ##Linux (Deb installer will be generated in out/make/deb/x64/ )
     npm run make
 
-##Windows
-npm run pack
-mv .\prostgles-desktop-win32-x64\locales\  .\prostgles-desktop-win32-x64\Data\
-mv .\prostgles-desktop-win32-x64\resources\  .\prostgles-desktop-win32-x64\Data\
+    ##Windows
+    npm run makew
 
-Install Inno Setup from https://jrsoftware.org/isdl.php
+    Install Inno Setup from https://jrsoftware.org/isdl.php
 
+    Compile using the config file:  packed/inno.iss
+
+    Installation file will be generated in: packed/Output/
 
 ```
