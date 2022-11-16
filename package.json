@@ -12,7 +12,8 @@
     "make": "npx tsc && rm -rf ./out && electron-forge make",
     "build": "DEBUG=* electron-builder -l",
     "dist": "electron-builder",
-    "pack": "electron-packager . --out ./packed",
+    "pack": "rm -rf ./packed && electron-packager . --out ./packed",
+    "makew": "npm run pack && node win.js",
     "publish": "electron-forge publish"
   },
   "author": "Prostgles  <prostgles@protonmail.com>",
